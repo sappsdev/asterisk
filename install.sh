@@ -36,7 +36,7 @@ contrib/scripts/get_mp3_source.sh
 make install
 make config
 
-cp -r /etc /etc
+cp -r etc/* /etc/
 
 systemctl enable asterisk
 systemctl start asterisk
