@@ -1,12 +1,5 @@
 #!/bin/sh
 
-if [[ $(sudo -n true 2>/dev/null) ]]; then
-    echo "Sudo is not required. Executing the command without sudo."
-else
-    echo "Sudo is required. Executing sudo -i."
-    sudo -i
-fi
-
 ENV_FILE=".env"
 if [ ! -f "$ENV_FILE" ]; then
     echo "Error: File .env not found."
@@ -37,11 +30,10 @@ make install
 make config
 
 cp -r etc/* /etc/
+chmod +x env.sh
+./env.sh
 
 systemctl enable asterisk
 systemctl start asterisk
-
-chmod +x entrypoint.sh
-./entrypoint.sh
 
 echo "Asterisk has been installed successfully."
