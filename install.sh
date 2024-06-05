@@ -12,10 +12,10 @@ apt install -y wget odbc-postgresql certbot
 
 # Download and install Asterisk
 cd /usr/src
-wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-20.7.0.tar.gz
-tar zxvf asterisk-20.7.0.tar.gz
-rm -rf asterisk-20.7.0.tar.gz
-cd /usr/src/asterisk-20.7.0
+wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-20-current.tar.gz
+tar zxvf asterisk-20-current.tar.gz
+rm -rf asterisk-20-current.tar.gz
+cd /usr/src/asterisk-20*/
 
 # Install asterisk dependencies
 contrib/scripts/install_prereq install
